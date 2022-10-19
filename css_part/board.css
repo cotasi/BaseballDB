@@ -65,18 +65,26 @@ header .btm .spot button:hover { background:#666; border-radius:100%; color:#fff
 .board_page a:first-child {border-left:1px solid #ddd;}
 .board_page a.num.on { border-color:#000; background:#000; color:#fff;}
 
-.board_view { width:100%; border-top:2px solid #000; font-size:1.4rem; }
-.board_view .title { padding:20px 15px; border-bottom:1px dashed #ddd; font-size:2rem;}
-.board_view .infom { padding :15px; border-bottom:1px solid #999; font-size:0;}
-.board_view .infom dl:first-child { padding-left:0;}
-.board_view .infom dl { display:inline-block; padding:0 20px; position:relative; }
-.board_view .infom dl::before { content:""; width:1px; height:13px; display:block; background:#ddd; position:absolute; top:1px; left:0; }
-.board_view .infom dl:first-child::before { display:none;}
-.board_view .infom dl dt,
-.board_view .infom dl dd { display:inline-block; font-size:1.4rem;}
-.board_view .infom dl dt { }
-.board_view .infom dl dd { margin-left : 10px; color:#777; font-size:1.4rem;}
-.board_view .cont {padding:15px; border-bottom:1px solid #000; line-height:160%; font-size:1.4rem;}
+.board_write { width:100%; border-top:2px solid #000;}
+.board_write .titler,
+.board_write .infomation { padding:15px;}
+.board_write .infomation { border-top:1px dashed #ddd; border-bottom: 1px solid #000; font-size:0;}
+.board_write .contenter { border-bottom:1px solid #000;}
+.board_write .contenter textarea { display:block; width:100%; height:300px; padding:15px; box-sizing:border-box; border:0; resize:vertical;}
+.board_wrtie .titler dt { width: 100%;}
+.board_write .infomation dt { width:100px;}
+.board_write .titler dl,
+.board_write .infomation { font-size:0;}
+.board_write .titler dt,
+.board_write .titler dd,
+.board_write .infomation dt,
+.board_write .infomation dd { display:inline-block; vertical-align:middle; font-size:1.4rem;}
+.board_write .infomation dl { display:inline-block; width:50%; vertical-align:middle;}
+.board_write .titler dd { width: calc(100% - 100px);}
+.board_write .titler input[type="text"] { width:80%;}
+.board_write .titler input[type="text"]
+.board_write .infomation input[type="text"],
+.board_write .infomation input[type="password"] { padding:10px; box-sizing:border-box;}
 
 
 
