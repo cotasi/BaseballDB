@@ -1,0 +1,18 @@
+package control;
+
+import action.Action;
+import action.DeleteFormAction;
+import action.DeleteFrocAction;
+import action.IdCheckAction;
+import action.IndexAction;
+import action.LoginFormAction;
+import action.LoginProcAction;
+import action.LogoutAction;
+import action.ModifyFormAction;
+import action.ModifyProcAction;
+import action.RegFormAction;
+
+
+public class ActionFactory {
+
+}

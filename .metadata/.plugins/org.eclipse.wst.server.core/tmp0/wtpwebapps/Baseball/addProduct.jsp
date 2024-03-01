@@ -58,7 +58,7 @@
 
     <main>
         <section class="block">
-        <form name="newProduct" action="./processAddProduct.jsp" method="post" enctype="multipart/form-data">
+        <form name="newProduct" action="./processAddProduct.jsp" method="post">
             <div class="joincontents">
                 <h2 class="subject2">등록하기</h2>
                

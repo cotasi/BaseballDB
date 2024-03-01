@@ -1,0 +1,214 @@
+package model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Vector;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
+public class MemberDAO {
+    
+    private static MemberDAO instance = null;
+    private MemberDAO() {}
+    public static MemberDAO getInstance() {
+        
+        if(instance == null) {
+            
+            synchronized(MemberDAO.class) {
+                
+                instance = new MemberDAO();
+                
+            }
+            
+            
+        }
+        
+        return instance;
+        
+    }
+    
+    private Connection getConnection() {
+        
+        Connection conn = null;
+        
+        try {
+            
+            Context init = new InitialContext();
+            DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/MySQL");
+            conn = ds.getConnection();
+            
+        } catch (NamingException e) {
+            
+            
+            System.out.println("Connection 생성실패");
+            e.printStackTrace();
+            
+        } catch(SQLException e) {
+            
+            System.out.println("Connection 생성실패");
+            e.printStackTrace();
+            
+            
+        }
+        
+        return conn;
+        
+    }
+    
+    public boolean idCheck (String userid) {
+        
+        boolean result = true;
+        
+        Connection conn = null;
+        
+        PreparedStatement pstmt = null;
+        
+        ResultSet rs = null;
+        
+        try {
+            
+            conn = getConnection();
+            
+            pstmt = conn.prepareStatement("Select * from member where userid = ?");
+            
+            pstmt.setString(1, userid);
+            
+            rs = pstmt.executeQuery();
+            
+            if(!rs.next()) result = false;
+            
+        } catch(SQLException e) {
+            
+            e.printStackTrace();
+            
+            
+        }finally {
+            
+            if(rs != null) try { rs.close(); } catch (SQLException sqle1) {}
+            if(pstmt != null) try { pstmt.close(); } catch(SQLException sqle2) { }
+            if(conn != null) try { conn.close(); } catch(SQLException sqle3) { }
+        }
+         
+        return result;
+        
+        }
+        
+        public boolean memberInsert(MemberVO vo) {
+            
+            boolean result = false;
+            
+            Connection conn = null;
+            
+            PreparedStatement pstmt = null;
+            
+            ResultSet rs = null;
+            
+            try {
+                
+                conn = getConnection();
+                
+                pstmt = conn.prepareStatement("insert into member values(?,?)");
+                
+                pstmt.setString(1, vo.getUserid());
+                pstmt.setString(2, vo.getUserpw());
+                if(pstmt.executeUpdate() > 0) result = true;
+                
+            } catch(SQLException e) {
+                
+                e.printStackTrace();
+                
+            } finally {
+                
+                if(rs != null) try { rs.close(); } catch (SQLException sqle1) {}
+                if(pstmt != null) try { pstmt.close(); } catch(SQLException sqle2) { }
+                if(conn != null) try { conn.close(); } catch(SQLException sqle3) { }
+                
+                
+            }
+            
+            return result;
+        
+    }
+        
+    public boolean updateMember(MemberVO vo) {
+        
+        boolean result = false;
+        
+        Connection conn = null;
+        
+        PreparedStatement pstmt = null;
+        
+        ResultSet rs = null;
+        
+        try {
+            
+            conn = getConnection();
+            
+            pstmt = conn.prepareStatement("update member set userpw=?");
+            
+            pstmt.setString(1, vo.getUserid());
+            pstmt.setString(2, vo.getUserpw());
+            if(pstmt.executeUpdate() > 0) result = true;
+            
+        } catch(SQLException e) {
+            
+            e.printStackTrace();
+            
+        } finally {
+            
+            if(rs != null) try { rs.close(); } catch (SQLException sqle1) {}
+            if(pstmt != null) try { pstmt.close(); } catch(SQLException sqle2) { }
+            if(conn != null) try { conn.close(); } catch(SQLException sqle3) { }
+            
+            
+        }
+        
+        return result;
+    
+}
+    
+    public int loginCheck(String userid,String userpw) {
+        
+        int result = -1;
+        
+        Connection conn = null;
+        
+        PreparedStatement pstmt = null;
+        
+        ResultSet rs = null;
+        
+        try {
+            
+            conn = getConnection();
+            
+            pstmt = conn.prepareStatement("select userpw from member where userid =?");
+            
+            pstmt.setString(1, getUserid());
+            if(pstmt.executeUpdate() > 0) result = true;
+            
+        } catch(SQLException e) {
+            
+            e.printStackTrace();
+            
+        } finally {
+            
+            if(rs != null) try { rs.close(); } catch (SQLException sqle1) {}
+            if(pstmt != null) try { pstmt.close(); } catch(SQLException sqle2) { }
+            if(conn != null) try { conn.close(); } catch(SQLException sqle3) { }
+            
+            
+        }
+        
+        return result;
+    
+}
+        
+        
+        
+    }
+
+}

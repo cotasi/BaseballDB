@@ -1,0 +1,17 @@
+package action;
+
+import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import control.ActionFoward;
+
+public class JoinAction implements Action {
+    
+    @Override
+    public ActionFoward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        
+        return new ActionFoward("index.jsp",false);
+        
+    }
+
+}

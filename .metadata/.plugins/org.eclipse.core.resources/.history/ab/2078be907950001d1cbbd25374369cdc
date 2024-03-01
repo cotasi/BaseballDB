@@ -1,0 +1,10 @@
+package control;
+
+public class ActionFoward {
+    
+    private String url;
+    private boolean redirect;
+    public ActionFoward() {}
+    public ActionFoward(String url) { this.url = url;}
+
+}

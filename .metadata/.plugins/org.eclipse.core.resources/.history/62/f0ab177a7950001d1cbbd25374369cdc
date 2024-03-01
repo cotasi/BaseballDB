@@ -1,0 +1,8 @@
+package control;
+
+public class ActionFoward {
+    
+    private String url;
+    private boolean redirect;
+
+}

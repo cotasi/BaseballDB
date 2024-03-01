@@ -58,7 +58,7 @@
 
     <main>
         <section class="block">
-        <form method="post" action="./memberRegister">
+        <form method="post" action="">
             <div class="joincontents">
                 <h2 class="subject2">회원가입</h2>
                 <p>혹시라도 남의 정보를 이용하여 이익을 취득하는 경우 <br>
@@ -83,7 +83,7 @@
                                 <th><span>필수입력</span>아이디</th>
                                 <td>
                                     <input type="text" style="width:300px;" id="userid">
-                                    <input type="button" class="btn_type3" value="중복확인" onclick="idCheck(this.form.id.value)"/>
+                                    <input type="button" class="btn_type3" value="중복확인"/>
                                     <span class="ifo">아이디 입력 후 중복확인을 꼭 해주세요.</span>
                                 </td>
 

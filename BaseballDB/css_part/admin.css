@@ -1,0 +1,9 @@
+@charset "EUC-KR";
+
+.joincontents { width:1280px; margin: 0 auto;}
+.subject2 { position:relative; padding:55px 0 53px;font-size:36px; color:#222; line-height:53px; text-align:center; font-weight:normal;}
+.subject2:after { content:""; display:block; position:absolute; left:50%; bottom:0; width:50px; height:1px; background:#aaa; transform:translate(-50%,-50%);}
+.subject2 + p { line-height:30px; padding:46px 0 54px; font-size:18px; color:#666; text-align:center;}
+
+.subject3 {padding-top:40px; padding-bottom:20px;font-size:18px; color:#222; font-weight:normal;}
+.subject3:before { content:""; vertical-align:middle; display:inline-block; width:4px; height:4px; background:#00a5e1; margin:0 8px 0 0;}

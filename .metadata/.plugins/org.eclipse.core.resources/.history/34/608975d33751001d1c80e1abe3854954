@@ -1,0 +1,26 @@
+package model;
+
+public class MemberVO {
+    
+    private String userid;
+    private String userpw;
+    
+    public MemberVO() { }
+    public MemberVO(String userid,String userpw) { this.userid = userid; this.userpw = userpw; }
+    
+    public String getUserid() {
+        return userid;
+    }
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+    public String getUserpw() {
+        return userpw;
+    }
+    public void setUserpw(String userpw) {
+        this.userpw = userpw;
+    }
+    
+    
+
+}

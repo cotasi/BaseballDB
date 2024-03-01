@@ -1,0 +1,33 @@
+package control;
+
+import action.Action;
+import action.DeleteFormAction;
+import action.DeleteFrocAction;
+import action.IdCheckAction;
+import action.IndexAction;
+import action.LoginFormAction;
+import action.LoginProcAction;
+import action.LogoutAction;
+import action.ModifyFormAction;
+import action.ModifyProcAction;
+import action.RegFormAction;
+import action.RegProcAction;
+
+
+public class ActionFactory {
+    
+    private static ActionFactory factory;
+    
+    private ActionFactory() {
+        
+    }
+    
+    public static synchronized ActionFactory getInstance() {
+        
+        if(factory == null) { factory = new ActionFactory(); }
+        
+        return factory;
+        
+    }
+
+}

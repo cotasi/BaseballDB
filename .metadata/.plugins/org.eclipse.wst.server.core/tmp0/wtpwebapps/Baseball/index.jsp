@@ -51,8 +51,8 @@
 					</ul>
 				</nav>
 				<div class="spot">
-					<a href="./login.jsp">Login</a>
-					<a href="./join01.jsp">Sign up</a>
+					<a href="">Login</a>
+					<a href="">Sign up</a>
 					<button onclick="alert('아직 미구현된 기능입니다.')"> <i class="xi-search"><span class="hide">검색</span></i></button>
 				</div>
 			</div>
@@ -106,7 +106,9 @@
 							%>
 					
 							<dt><a href=""><%= product.getPename() %></a></dt>
-							<dd><a href=""><img src="images/<%= product.getFilename() %>" alt=""></a></dd>
+							<dd><a href="">
+								<img src="images/<%= product.getFilename() %>" alt="">
+							</a></dd>
 							<dd class="figure"><%= product.getPname()%></dd>
 							<dd class="last">
 								<div><a href="./product.jsp?id=<%=product.getPid()%>">이동하기</a></div>
@@ -121,7 +123,7 @@
 								Product product2 = listOfProducts.get(1);
 							%>
 							<dt><a href=""><%= product2.getPename() %></a></dt>
-							<dd><a href=""><img src="img/mlb_figure_01.png" alt=""></a></dd>
+							<dd><a href=""><img src="images/<%= product.getFilename() %>" alt=""></a></dd>
 							<dd class="figure"><%= product2.getPname() %></dd>
 							<dd class="last">
 								<div><a href="./product.jsp?id=<%=product.getPid()%>">이동하기</a></div>
@@ -144,6 +146,7 @@
 							</dd>
 						</dl>
 					</li>
+					
 					
 				</ul>
 				

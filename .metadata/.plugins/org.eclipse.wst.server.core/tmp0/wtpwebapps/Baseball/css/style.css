@@ -55,9 +55,13 @@ header .btm .spot button:hover { background:#666; border-radius:100%; color:#fff
 .icons dt { padding:21px 10px 15px; border-top: 1px solid #f0f0f0; }
 .icons dt a { font-size:16px; color:#1a1a1a;}
 .icons img {position:absolute; top:0; left:0;}
+.icons dd { width:1000px; height:500px;}
 .icons .figure { padding:0 0 0 10px;font-size:21px; color:#1a1a1a; font-weight:bold;}
 .icons .last { position:absolute; left:0; bottom:0; width:100%; border-top:1px solid #f0f0f0; background:#fafafa;}
 .icons .last div {float:left; width:50%; height:30px; line-height:30px; font-size:12px; color:#767676;}
+
+
+
 #info { background:#f1f2f3; padding-bottom:30px;}
 #info > div { width:1280px; margin:0 auto; position:relative;}
 #info > div h2 {font-size:38px; color:#123977; text-align:center; padding:50px 60px; font-weight:lighter; letter-spacing: 10px;}

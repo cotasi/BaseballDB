@@ -1,0 +1,30 @@
+package action;
+
+import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import control.ActionFoward;
+import model.MemberDAO;
+
+public class IdCheckAction {
+
+    @Override
+    public ActionFoward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        
+        @Override
+        MemberDAO dao = MemberDAO.getInstance();
+        
+        String userid = request.getParameter("userid");
+        
+        boolean check = dao.idCheck(userid);
+        
+        request.setAttribute("userid",userid);
+        
+        request.setAttribute("check",check);
+        
+        return new ActionFoward("idCheck.jsp",false);
+        
+        
+        
+    }
+}

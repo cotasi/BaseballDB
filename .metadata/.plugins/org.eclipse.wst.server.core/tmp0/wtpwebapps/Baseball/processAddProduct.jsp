@@ -17,15 +17,10 @@
 	
 	Integer price,coupon;
 	
-	if(unitprice.isEmpty())
-		price = 0;
-	else
-		price = Integer.valueOf(unitprice);
 	
-	if(unitcoupon.isEmpty())
-		coupon = 0;
-	else
-		coupon = Integer.valueOf(unitcoupon);
+	price = Integer.valueOf(unitprice);
+	
+	coupon = Integer.valueOf(unitcoupon);
 	
 	ProductRepository dao = ProductRepository.getInstance();
 	
@@ -39,7 +34,7 @@
 	
 	dao.addProduct(newProduct);
 	
-	response.sendRedirect("product.jsp");
+	response.sendRedirect("index.jsp");
 
 
 %>

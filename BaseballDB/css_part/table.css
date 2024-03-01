@@ -1,0 +1,10 @@
+@charset "EUC-KR";
+
+table {width:100%; border-collapse:collapse; table-layout:fixed; font-size:'Roboto',sans-serif;}
+table,th,td{border:1px solid #ddd; text-align:center; font-weight:bold;}
+th {background-color:lightgray;}
+td,th { padding:15px;}
+
+.row { margin:0 auto; width:1280px;}
+main { padding-top:20px;}
+

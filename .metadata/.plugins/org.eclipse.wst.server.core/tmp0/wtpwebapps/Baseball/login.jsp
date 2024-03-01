@@ -28,7 +28,7 @@
 				</div>
 			<h2 class="hide">SNS</h2>
 			<ul class="sns">
-				<li><a href="https://mlb.com"><img src="../img/sns_1.png" alt ="sns_1"></a></li>
+				<li><a href="https://mlb.com"><img src="img/sns_1.png" alt ="sns_1"></a></li>
 				<li><a href="#"><img src="img/sns_2.png" alt ="sns_2"></a></li>
 				<li><a href="#"><img src="img/sns_3.png" alt ="sns_3"></a></li>
 				<li><a href="#"><img src="img/sns_4.png" alt ="sns_4"></a></li>

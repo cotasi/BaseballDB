@@ -1,0 +1,56 @@
+package model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Vector;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
+public class MemberDAO {
+    
+    private static MemberDAO instance = null;
+    private MemberDAO() {}
+    public static MemberDAO getInstance() {
+        
+        if(instance == null) {
+            
+            synchronized(MemberDAO.class) {
+                
+                instance = new MemberDAO();
+                
+            }
+            
+            
+        }
+        
+        return instance;
+        
+    }
+    
+    private Connection getConnection() {
+        
+        Connection conn = null;
+        
+        try {
+            
+            Context init = new InitialContext();
+            DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/MySQL");
+            conn = ds.getConnection();
+            
+        } catch (NamingException e) {
+            
+            
+            System.out.println("Connection 생성실패");
+            
+            
+        }
+        
+        
+        
+    }
+
+}
